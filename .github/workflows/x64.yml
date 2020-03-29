@@ -16,7 +16,7 @@ on:
       - master
     paths:
       - '.config'
-      - '.github/workflows/x64.xml'
+      - '.github/workflows/x64.yml'
   schedule:
     - cron: 0 8 * * *
 #  watch:
