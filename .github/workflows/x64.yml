@@ -18,7 +18,7 @@ on:
       - '.config'
       - '.github/workflows/x64.xml'
   schedule:
-    - cron: 0 8 * * 5
+    - cron: 0 8 * * *
 #  watch:
 #    types: started
 
