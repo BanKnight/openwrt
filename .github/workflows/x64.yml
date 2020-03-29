@@ -112,3 +112,18 @@ jobs:
       with:
         name: x64
         path: ${{ env.FIRMWARE }}
+    - name: Make release tag 
+      id: make_release_tag
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      run: |
+        release_tag="Openwrt64-$(date +%Y-%m-%d)"
+        echo "##[set-output name=release_tag;]$release_tag"
+    - name: Upload assets to a Release
+      uses: svenstaro/upload-release-action@v1-release
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        file: ${{ env.FIRMWARE }}/*
+        repo_token: ${{ secrets.RELEASE }}  
+        tag:  ${{ steps.make_release_tag.outputs.release_tag }}
+        overwrite: true
+        file_glob: true
