@@ -6,3 +6,6 @@
 
 # 是否添加更多的支持
 将自己想要的编译，在issues中填好，我看到后会将相应的workflow弄好。
+
+# 资料参考
++ [配置](https://www.right.com.cn/forum/thread-344825-1-1.html)
