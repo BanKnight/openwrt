@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: x64
+name: lean-x64
 
 on:
   release:
@@ -15,7 +15,7 @@ on:
     branches:
       - master
     paths:
-      - '.config'
+      - 'lean-x64.config'
       - '.github/workflows/x64.yml'
   schedule:
     - cron: 0 8 * * *
@@ -117,7 +117,7 @@ jobs:
       id: make_release_tag
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: |
-        release_tag="Openwrt64-$(date +%Y-%m-%d)"
+        release_tag="lean-x64-$(date +%Y-%m-%d)"
         echo "##[set-output name=release_tag;]$release_tag"
     - name: Upload assets to a Release
       uses: svenstaro/upload-release-action@v1-release
