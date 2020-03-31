@@ -16,7 +16,7 @@ on:
       - master
     paths:
       - 'lean-x64.config'
-      - '.github/workflows/x64.yml'
+      - '.github/workflows/lean-x64.yml'
   schedule:
     - cron: 0 8 * * *
 #  watch:
